@@ -40,11 +40,11 @@
             lbPPDesc = new Label();
             lbSPDesc = new Label();
             tbSalePrice1 = new TextBox();
-            lbRavenueDesc = new Label();
-            lbGewinn1 = new Label();
+            lbProfitDesc = new Label();
+            lbProfit1 = new Label();
             lbModel2 = new Label();
             lbVolumeDesc = new Label();
-            textBox7 = new TextBox();
+            tbVolume1 = new TextBox();
             lbModel3 = new Label();
             lbModel4 = new Label();
             lbModel5 = new Label();
@@ -62,34 +62,34 @@
             lbTotalPurchPrice = new Label();
             lbTotalSalePrice = new Label();
             lbTotalVolume = new Label();
-            lbTotalRevenue = new Label();
+            lbTotalProfit = new Label();
             tbSalePrice2 = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            textBox16 = new TextBox();
-            textBox17 = new TextBox();
-            textBox18 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
+            tbSalePrice3 = new TextBox();
+            tbSalePrice4 = new TextBox();
+            tbSalePrice5 = new TextBox();
+            tbSalePrice6 = new TextBox();
+            tbSalePrice7 = new TextBox();
+            tbSalePrice8 = new TextBox();
+            tbSalePrice9 = new TextBox();
+            tbSalePrice10 = new TextBox();
+            tbVolume2 = new TextBox();
+            tbVolume3 = new TextBox();
+            tbVolume4 = new TextBox();
+            tbVolume5 = new TextBox();
+            tbVolume6 = new TextBox();
+            tbVolume7 = new TextBox();
+            tbVolume8 = new TextBox();
+            tbVolume9 = new TextBox();
+            tbVolume10 = new TextBox();
+            lbProfit2 = new Label();
+            lbProfit3 = new Label();
+            lbProfit4 = new Label();
+            lbProfit5 = new Label();
+            lbProfit6 = new Label();
+            lbProfit7 = new Label();
+            lbProfit8 = new Label();
+            lbProfit9 = new Label();
+            lbProfit10 = new Label();
             btCalc = new Button();
             SuspendLayout();
             // 
@@ -179,25 +179,26 @@
             tbSalePrice1.Location = new Point(335, 47);
             tbSalePrice1.Name = "tbSalePrice1";
             tbSalePrice1.Size = new Size(100, 23);
+            tbSalePrice1.Text = "499";
             tbSalePrice1.TabIndex = 13;
             // 
-            // lbRavenueDesc
+            // lbProfitDesc
             // 
-            lbRavenueDesc.AutoSize = true;
-            lbRavenueDesc.Location = new Point(604, 19);
-            lbRavenueDesc.Name = "lbRavenueDesc";
-            lbRavenueDesc.Size = new Size(47, 15);
-            lbRavenueDesc.TabIndex = 14;
-            lbRavenueDesc.Text = "Gewinn";
+            lbProfitDesc.AutoSize = true;
+            lbProfitDesc.Location = new Point(604, 19);
+            lbProfitDesc.Name = "lbProfitDesc";
+            lbProfitDesc.Size = new Size(47, 15);
+            lbProfitDesc.TabIndex = 14;
+            lbProfitDesc.Text = "Gewinn";
             // 
-            // lbGewinn1
+            // lbProfit1
             // 
-            lbGewinn1.AutoSize = true;
-            lbGewinn1.Location = new Point(616, 47);
-            lbGewinn1.Name = "lbGewinn1";
-            lbGewinn1.Size = new Size(19, 15);
-            lbGewinn1.TabIndex = 15;
-            lbGewinn1.Text = "0€";
+            lbProfit1.AutoSize = true;
+            lbProfit1.Location = new Point(616, 47);
+            lbProfit1.Name = "lbProfit1";
+            lbProfit1.Size = new Size(19, 15);
+            lbProfit1.TabIndex = 15;
+            lbProfit1.Text = "0€";
             // 
             // lbModel2
             // 
@@ -217,12 +218,12 @@
             lbVolumeDesc.TabIndex = 17;
             lbVolumeDesc.Text = "Menge";
             // 
-            // textBox7
+            // tbVolume1
             // 
-            textBox7.Location = new Point(458, 47);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 18;
+            tbVolume1.Location = new Point(458, 47);
+            tbVolume1.Name = "tbVolume1";
+            tbVolume1.Size = new Size(100, 23);
+            tbVolume1.TabIndex = 18;
             // 
             // lbModel3
             // 
@@ -372,14 +373,14 @@
             lbTotalVolume.TabIndex = 36;
             lbTotalVolume.Text = "0";
             // 
-            // lbTotalRevenue
+            // lbTotalProfit
             // 
-            lbTotalRevenue.AutoSize = true;
-            lbTotalRevenue.Location = new Point(616, 517);
-            lbTotalRevenue.Name = "lbTotalRevenue";
-            lbTotalRevenue.Size = new Size(19, 15);
-            lbTotalRevenue.TabIndex = 37;
-            lbTotalRevenue.Text = "0€";
+            lbTotalProfit.AutoSize = true;
+            lbTotalProfit.Location = new Point(616, 517);
+            lbTotalProfit.Name = "lbTotalProfit";
+            lbTotalProfit.Size = new Size(19, 15);
+            lbTotalProfit.TabIndex = 37;
+            lbTotalProfit.Text = "0€";
             // 
             // tbSalePrice2
             // 
@@ -388,205 +389,205 @@
             tbSalePrice2.Size = new Size(100, 23);
             tbSalePrice2.TabIndex = 38;
             // 
-            // textBox1
+            // tbSalePrice3
             // 
-            textBox1.Location = new Point(333, 140);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 39;
+            tbSalePrice3.Location = new Point(333, 140);
+            tbSalePrice3.Name = "tbSalePrice3";
+            tbSalePrice3.Size = new Size(100, 23);
+            tbSalePrice3.TabIndex = 39;
             // 
-            // textBox2
+            // tbSalePrice4
             // 
-            textBox2.Location = new Point(335, 183);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 40;
+            tbSalePrice4.Location = new Point(335, 183);
+            tbSalePrice4.Name = "tbSalePrice4";
+            tbSalePrice4.Size = new Size(100, 23);
+            tbSalePrice4.TabIndex = 40;
             // 
-            // textBox3
+            // tbSalePrice5
             // 
-            textBox3.Location = new Point(335, 228);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 41;
+            tbSalePrice5.Location = new Point(335, 228);
+            tbSalePrice5.Name = "tbSalePrice5";
+            tbSalePrice5.Size = new Size(100, 23);
+            tbSalePrice5.TabIndex = 41;
             // 
-            // textBox4
+            // tbSalePrice6
             // 
-            textBox4.Location = new Point(333, 266);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 42;
+            tbSalePrice6.Location = new Point(333, 266);
+            tbSalePrice6.Name = "tbSalePrice6";
+            tbSalePrice6.Size = new Size(100, 23);
+            tbSalePrice6.TabIndex = 42;
             // 
-            // textBox5
+            // tbSalePrice7
             // 
-            textBox5.Location = new Point(333, 316);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 43;
+            tbSalePrice7.Location = new Point(333, 316);
+            tbSalePrice7.Name = "tbSalePrice7";
+            tbSalePrice7.Size = new Size(100, 23);
+            tbSalePrice7.TabIndex = 43;
             // 
-            // textBox6
+            // tbSalePrice8
             // 
-            textBox6.Location = new Point(333, 365);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 44;
+            tbSalePrice8.Location = new Point(333, 365);
+            tbSalePrice8.Name = "tbSalePrice8";
+            tbSalePrice8.Size = new Size(100, 23);
+            tbSalePrice8.TabIndex = 44;
             // 
-            // textBox8
+            // tbSalePrice9
             // 
-            textBox8.Location = new Point(333, 416);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 23);
-            textBox8.TabIndex = 45;
+            tbSalePrice9.Location = new Point(333, 416);
+            tbSalePrice9.Name = "tbSalePrice9";
+            tbSalePrice9.Size = new Size(100, 23);
+            tbSalePrice9.TabIndex = 45;
             // 
-            // textBox9
+            // tbSalePrice10
             // 
-            textBox9.Location = new Point(335, 460);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 23);
-            textBox9.TabIndex = 46;
+            tbSalePrice10.Location = new Point(335, 460);
+            tbSalePrice10.Name = "tbSalePrice10";
+            tbSalePrice10.Size = new Size(100, 23);
+            tbSalePrice10.TabIndex = 46;
             // 
-            // textBox10
+            // tbVolume2
             // 
-            textBox10.Location = new Point(458, 91);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(100, 23);
-            textBox10.TabIndex = 47;
+            tbVolume2.Location = new Point(458, 91);
+            tbVolume2.Name = "tbVolume2";
+            tbVolume2.Size = new Size(100, 23);
+            tbVolume2.TabIndex = 47;
             // 
-            // textBox11
+            // tbVolume3
             // 
-            textBox11.Location = new Point(458, 140);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 23);
-            textBox11.TabIndex = 48;
+            tbVolume3.Location = new Point(458, 140);
+            tbVolume3.Name = "tbVolume3";
+            tbVolume3.Size = new Size(100, 23);
+            tbVolume3.TabIndex = 48;
             // 
-            // textBox12
+            // tbVolume4
             // 
-            textBox12.Location = new Point(458, 183);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(100, 23);
-            textBox12.TabIndex = 49;
+            tbVolume4.Location = new Point(458, 183);
+            tbVolume4.Name = "tbVolume4";
+            tbVolume4.Size = new Size(100, 23);
+            tbVolume4.TabIndex = 49;
             // 
-            // textBox13
+            // tbVolume5
             // 
-            textBox13.Location = new Point(458, 225);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(100, 23);
-            textBox13.TabIndex = 50;
+            tbVolume5.Location = new Point(458, 225);
+            tbVolume5.Name = "tbVolume5";
+            tbVolume5.Size = new Size(100, 23);
+            tbVolume5.TabIndex = 50;
             // 
-            // textBox14
+            // tbVolume6
             // 
-            textBox14.Location = new Point(458, 266);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(100, 23);
-            textBox14.TabIndex = 51;
+            tbVolume6.Location = new Point(458, 266);
+            tbVolume6.Name = "tbVolume6";
+            tbVolume6.Size = new Size(100, 23);
+            tbVolume6.TabIndex = 51;
             // 
-            // textBox15
+            // tbVolume7
             // 
-            textBox15.Location = new Point(458, 316);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(100, 23);
-            textBox15.TabIndex = 52;
+            tbVolume7.Location = new Point(458, 316);
+            tbVolume7.Name = "tbVolume7";
+            tbVolume7.Size = new Size(100, 23);
+            tbVolume7.TabIndex = 52;
             // 
-            // textBox16
+            // tbVolume8
             // 
-            textBox16.Location = new Point(458, 365);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(100, 23);
-            textBox16.TabIndex = 53;
+            tbVolume8.Location = new Point(458, 365);
+            tbVolume8.Name = "tbVolume8";
+            tbVolume8.Size = new Size(100, 23);
+            tbVolume8.TabIndex = 53;
             // 
-            // textBox17
+            // tbVolume9
             // 
-            textBox17.Location = new Point(458, 416);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(100, 23);
-            textBox17.TabIndex = 54;
+            tbVolume9.Location = new Point(458, 416);
+            tbVolume9.Name = "tbVolume9";
+            tbVolume9.Size = new Size(100, 23);
+            tbVolume9.TabIndex = 54;
             // 
-            // textBox18
+            // tbVolume10
             // 
-            textBox18.Location = new Point(458, 460);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(100, 23);
-            textBox18.TabIndex = 55;
+            tbVolume10.Location = new Point(458, 460);
+            tbVolume10.Name = "tbVolume10";
+            tbVolume10.Size = new Size(100, 23);
+            tbVolume10.TabIndex = 55;
             // 
-            // label1
+            // lbProfit2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(616, 94);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 15);
-            label1.TabIndex = 56;
-            label1.Text = "0€";
+            lbProfit2.AutoSize = true;
+            lbProfit2.Location = new Point(616, 94);
+            lbProfit2.Name = "lbProfit2";
+            lbProfit2.Size = new Size(19, 15);
+            lbProfit2.TabIndex = 56;
+            lbProfit2.Text = "0€";
             // 
-            // label2
+            // lbProfit3
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(616, 140);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 15);
-            label2.TabIndex = 57;
-            label2.Text = "0€";
+            lbProfit3.AutoSize = true;
+            lbProfit3.Location = new Point(616, 140);
+            lbProfit3.Name = "lbProfit3";
+            lbProfit3.Size = new Size(19, 15);
+            lbProfit3.TabIndex = 57;
+            lbProfit3.Text = "0€";
             // 
-            // label3
+            // lbProfit4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(616, 183);
-            label3.Name = "label3";
-            label3.Size = new Size(19, 15);
-            label3.TabIndex = 58;
-            label3.Text = "0€";
+            lbProfit4.AutoSize = true;
+            lbProfit4.Location = new Point(616, 183);
+            lbProfit4.Name = "lbProfit4";
+            lbProfit4.Size = new Size(19, 15);
+            lbProfit4.TabIndex = 58;
+            lbProfit4.Text = "0€";
             // 
-            // label4
+            // lbProfit5
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(616, 228);
-            label4.Name = "label4";
-            label4.Size = new Size(19, 15);
-            label4.TabIndex = 59;
-            label4.Text = "0€";
+            lbProfit5.AutoSize = true;
+            lbProfit5.Location = new Point(616, 228);
+            lbProfit5.Name = "lbProfit5";
+            lbProfit5.Size = new Size(19, 15);
+            lbProfit5.TabIndex = 59;
+            lbProfit5.Text = "0€";
             // 
-            // label5
+            // lbProfit6
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(616, 269);
-            label5.Name = "label5";
-            label5.Size = new Size(19, 15);
-            label5.TabIndex = 60;
-            label5.Text = "0€";
+            lbProfit6.AutoSize = true;
+            lbProfit6.Location = new Point(616, 269);
+            lbProfit6.Name = "lbProfit6";
+            lbProfit6.Size = new Size(19, 15);
+            lbProfit6.TabIndex = 60;
+            lbProfit6.Text = "0€";
             // 
-            // label6
+            // lbProfit7
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(616, 319);
-            label6.Name = "label6";
-            label6.Size = new Size(19, 15);
-            label6.TabIndex = 61;
-            label6.Text = "0€";
+            lbProfit7.AutoSize = true;
+            lbProfit7.Location = new Point(616, 319);
+            lbProfit7.Name = "lbProfit7";
+            lbProfit7.Size = new Size(19, 15);
+            lbProfit7.TabIndex = 61;
+            lbProfit7.Text = "0€";
             // 
-            // label7
+            // lbProfit8
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(616, 368);
-            label7.Name = "label7";
-            label7.Size = new Size(19, 15);
-            label7.TabIndex = 62;
-            label7.Text = "0€";
+            lbProfit8.AutoSize = true;
+            lbProfit8.Location = new Point(616, 368);
+            lbProfit8.Name = "lbProfit8";
+            lbProfit8.Size = new Size(19, 15);
+            lbProfit8.TabIndex = 62;
+            lbProfit8.Text = "0€";
             // 
-            // label8
+            // lbProfit9
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(616, 416);
-            label8.Name = "label8";
-            label8.Size = new Size(19, 15);
-            label8.TabIndex = 63;
-            label8.Text = "0€";
+            lbProfit9.AutoSize = true;
+            lbProfit9.Location = new Point(616, 416);
+            lbProfit9.Name = "lbProfit9";
+            lbProfit9.Size = new Size(19, 15);
+            lbProfit9.TabIndex = 63;
+            lbProfit9.Text = "0€";
             // 
-            // label9
+            // lbProfit10
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(616, 463);
-            label9.Name = "label9";
-            label9.Size = new Size(19, 15);
-            label9.TabIndex = 64;
-            label9.Text = "0€";
+            lbProfit10.AutoSize = true;
+            lbProfit10.Location = new Point(616, 463);
+            lbProfit10.Name = "lbProfit10";
+            lbProfit10.Size = new Size(19, 15);
+            lbProfit10.TabIndex = 64;
+            lbProfit10.Text = "0€";
             // 
             // btCalc
             // 
@@ -604,34 +605,34 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(844, 580);
             Controls.Add(btCalc);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox18);
-            Controls.Add(textBox17);
-            Controls.Add(textBox16);
-            Controls.Add(textBox15);
-            Controls.Add(textBox14);
-            Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(lbProfit10);
+            Controls.Add(lbProfit9);
+            Controls.Add(lbProfit8);
+            Controls.Add(lbProfit7);
+            Controls.Add(lbProfit6);
+            Controls.Add(lbProfit5);
+            Controls.Add(lbProfit4);
+            Controls.Add(lbProfit3);
+            Controls.Add(lbProfit2);
+            Controls.Add(tbVolume10);
+            Controls.Add(tbVolume9);
+            Controls.Add(tbVolume8);
+            Controls.Add(tbVolume7);
+            Controls.Add(tbVolume6);
+            Controls.Add(tbVolume5);
+            Controls.Add(tbVolume4);
+            Controls.Add(tbVolume3);
+            Controls.Add(tbVolume2);
+            Controls.Add(tbSalePrice10);
+            Controls.Add(tbSalePrice9);
+            Controls.Add(tbSalePrice8);
+            Controls.Add(tbSalePrice7);
+            Controls.Add(tbSalePrice6);
+            Controls.Add(tbSalePrice5);
+            Controls.Add(tbSalePrice4);
+            Controls.Add(tbSalePrice3);
             Controls.Add(tbSalePrice2);
-            Controls.Add(lbTotalRevenue);
+            Controls.Add(lbTotalProfit);
             Controls.Add(lbTotalVolume);
             Controls.Add(lbTotalSalePrice);
             Controls.Add(lbTotalPurchPrice);
@@ -649,11 +650,11 @@
             Controls.Add(lbModel5);
             Controls.Add(lbModel4);
             Controls.Add(lbModel3);
-            Controls.Add(textBox7);
+            Controls.Add(tbVolume1);
             Controls.Add(lbVolumeDesc);
             Controls.Add(lbModel2);
-            Controls.Add(lbGewinn1);
-            Controls.Add(lbRavenueDesc);
+            Controls.Add(lbProfit1);
+            Controls.Add(lbProfitDesc);
             Controls.Add(tbSalePrice1);
             Controls.Add(lbSPDesc);
             Controls.Add(lbPPDesc);
@@ -682,11 +683,11 @@
         private Label lbPPDesc;
         private Label lbSPDesc;
         private TextBox tbSalePrice1;
-        private Label lbRavenueDesc;
-        private Label lbGewinn1;
+        private Label lbProfitDesc;
+        private Label lbProfit1;
         private Label lbModel2;
         private Label lbVolumeDesc;
-        private TextBox textBox7;
+        private TextBox tbVolume1;
         private Label lbModel3;
         private Label lbModel4;
         private Label lbModel5;
@@ -704,34 +705,34 @@
         private Label lbTotalPurchPrice;
         private Label lbTotalSalePrice;
         private Label lbTotalVolume;
-        private Label lbTotalRevenue;
+        private Label lbTotalProfit;
         private TextBox tbSalePrice2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
-        private TextBox textBox16;
-        private TextBox textBox17;
-        private TextBox textBox18;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
+        private TextBox tbSalePrice3;
+        private TextBox tbSalePrice4;
+        private TextBox tbSalePrice5;
+        private TextBox tbSalePrice6;
+        private TextBox tbSalePrice7;
+        private TextBox tbSalePrice8;
+        private TextBox tbSalePrice9;
+        private TextBox tbSalePrice10;
+        private TextBox tbVolume2;
+        private TextBox tbVolume3;
+        private TextBox tbVolume4;
+        private TextBox tbVolume5;
+        private TextBox tbVolume6;
+        private TextBox tbVolume7;
+        private TextBox tbVolume8;
+        private TextBox tbVolume9;
+        private TextBox tbVolume10;
+        private Label lbProfit2;
+        private Label lbProfit3;
+        private Label lbProfit4;
+        private Label lbProfit5;
+        private Label lbProfit6;
+        private Label lbProfit7;
+        private Label lbProfit8;
+        private Label lbProfit9;
+        private Label lbProfit10;
         private Button btCalc;
     }
 }
