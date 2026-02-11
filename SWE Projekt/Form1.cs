@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Reflection.Metadata;
+using System.Security.Cryptography;
 
 namespace SWE_Projekt {
 
@@ -15,11 +16,72 @@ namespace SWE_Projekt {
         public Form1()
         {
             InitializeComponent();
+            fillDictionaries();
+            setTotals();
+        }
 
+        public void setTotals()
+        {
+            double resPurch = 0;
+            double resSale = 0;
+            double resVolume = 0;
+
+            for (int i = 1; i <= LIMIT; i++)
+            {
+                try
+                {
+                    resPurch += double.Parse(PurchasePriceTextBoxes[i].Text) * double.Parse(VolumeTextBoxes[i].Text);
+                }
+                catch (Exception e)
+                {
+                    resPurch += 0;
+                }
+                try
+                {
+                    resSale += double.Parse(SalePriceTextBoxes[i].Text) * double.Parse(VolumeTextBoxes[i].Text);
+                }
+                catch (Exception e)
+                {
+                    resSale += 0;
+                }
+                try
+                {
+                    resVolume += double.Parse(VolumeTextBoxes[i].Text);
+                }
+                catch (Exception e)
+                {
+                    resVolume += 0;
+                }
+                try
+                {
+                    ProfitLabels[i].Text = (double.Parse(SalePriceTextBoxes[i].Text) - double.Parse(PurchasePriceTextBoxes[i].Text)) * double.Parse(VolumeTextBoxes[i].Text) + "€";
+                }
+                catch (Exception e)
+                {
+                    ProfitLabels[i].Text = 0 + "€";
+                }
+            }
+
+            TotalLabels[1].Text = resPurch + "€";
+            TotalLabels[2].Text = resSale + "€";
+            TotalLabels[3].Text = "" + resVolume;
+            TotalLabels[4].Text = (resSale - resPurch) + "€";
         }
 
         private void fillDictionaries()
         {
+            TotalLabels.Clear();
+            ProfitLabels.Clear();
+            SalePriceTextBoxes.Clear();
+            PurchasePriceTextBoxes.Clear();
+            VolumeTextBoxes.Clear();
+
+            TotalLabels.Add(1, lbTotalPurchPrice);
+            TotalLabels.Add(2, lbTotalSalePrice);
+            TotalLabels.Add(3, lbTotalVolume);
+            TotalLabels.Add(4, lbTotalProfit);
+
+
             for (int i = 1; i <= LIMIT; i++)
             {
                 Control[] matches = this.Controls.Find("tbSalePrice" + i, true);
@@ -69,11 +131,10 @@ namespace SWE_Projekt {
             fillDictionaries();
             for (int i = 1; i <= LIMIT; i++)
             {
-                double profit = double.Parse(SalePriceTextBoxes[i].Text.Replace(",",".")) - double.Parse(PurchasePriceTextBoxes[i].Text.Replace(",","."));
+                double profit = double.Parse(SalePriceTextBoxes[i].Text.Replace(",", ".")) - double.Parse(PurchasePriceTextBoxes[i].Text.Replace(",", "."));
                 ProfitLabels[i].Text = profit * int.Parse(VolumeTextBoxes[i].Text) + "€";
             }
-
-            Debug.WriteLine("Dies war ein Test");
+            setTotals();
         }
 
     }
