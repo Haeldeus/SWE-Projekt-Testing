@@ -1,7 +1,9 @@
 using System.Diagnostics;
 using System.Globalization;
+using System.Reflection;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace SWE_Projekt {
@@ -155,6 +157,56 @@ namespace SWE_Projekt {
                 NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign,
                 CultureInfo.InvariantCulture,
                 out result);
+        }
+
+
+        private void btExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "CSV Datei (*.csv)|*.csv";
+            dialog.Title = "CSV exportieren";
+            dialog.FileName = "export.csv";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(dialog.FileName, false, Encoding.UTF8))
+                {
+                    // Header
+                    writer.WriteLine("Model;Purchase;Sale;Volume;Profit");
+
+                    for (int i = 1; i <= LIMIT; i++)
+                    {
+                        String model = ModelLabels[i].Text;
+                        String purchase = PurchasePriceTextBoxes[i].Text + "€";
+                        String sale = SalePriceTextBoxes[i].Text + "€";
+                        String volume = VolumeTextBoxes[i].Text;
+                        String profit = ProfitLabels[i].Text;
+
+                        writer.WriteLine($"{model};{purchase};{sale};{volume};{profit}");
+                    }
+                    writer.WriteLine($"Total;{TotalLabels[1].Text};{TotalLabels[2].Text};{TotalLabels[3].Text};{TotalLabels[4].Text}");
+                }
+
+                using (StreamWriter writer = new StreamWriter(dialog.FileName.Replace(".csv", "_Comma.csv"), false, Encoding.UTF8))
+                {
+                    // Header
+                    writer.WriteLine("Model,Purchase,Sale,Volume,Profit");
+
+                    for (int i = 1; i <= LIMIT; i++)
+                    {
+                        String model = ModelLabels[i].Text;
+                        String purchase = PurchasePriceTextBoxes[i].Text.Replace(",",".") + "€";
+                        String sale = SalePriceTextBoxes[i].Text.Replace(",", ".") + "€";
+                        String volume = VolumeTextBoxes[i].Text;
+                        String profit = ProfitLabels[i].Text.Replace(",", ".");
+
+                        writer.WriteLine($"{model},{purchase},{sale},{volume},{profit}");
+                    }
+                    writer.WriteLine($"Total,{TotalLabels[1].Text},{TotalLabels[2].Text},{TotalLabels[3].Text},{TotalLabels[4].Text}");
+                }
+
+                MessageBox.Show("Export erfolgreich!");
+            }
         }
 
         private void btCalc_Click(object sender, EventArgs e)

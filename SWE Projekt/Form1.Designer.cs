@@ -107,6 +107,7 @@ namespace SWE_Projekt
             lbProfit8 = new Label();
             lbProfit9 = new Label();
             lbProfit10 = new Label();
+            btExport = new Button();
             btCalc = new Button();
             btRenameRow1 = new Button();
             btRenameRow2 = new Button();
@@ -587,6 +588,15 @@ namespace SWE_Projekt
             lbTotalProfit.Name = "lbTotalProfit";
             lbTotalProfit.Text = "0€";
             lbTotalProfit.TextAlign = ContentAlignment.MiddleCenter;
+            //
+            // btExport
+            //
+            btExport.BackColor = SystemColors.ButtonFace;
+            btExport.Name = "btExport";
+            btExport.Text = "Export...";
+            btExport.UseVisualStyleBackColor = false;
+            btExport.Click += btExport_Click;
+            btExport.TabStop = false;
             // 
             // btCalc
             // 
@@ -623,6 +633,7 @@ namespace SWE_Projekt
             Controls.Add(btRenameRow3);
             Controls.Add(btRenameRow2);
             Controls.Add(btRenameRow1);
+            Controls.Add(btExport);
             Controls.Add(btCalc);
             Controls.Add(lbProfit10);
             Controls.Add(lbProfit9);
@@ -908,6 +919,9 @@ namespace SWE_Projekt
             btRenameRow10.Location = new Point(colTbPoints[6] - 10, rowTbPoints[11]);
             btRenameRow10.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
 
+            btExport.Location = new Point(colTbPoints[6] - 10, rowTbPoints[12]);
+            btExport.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+
             btCalc.Location = new Point(colTbPoints[6] - 10, rowTbPoints[13]);
             btCalc.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
         }
@@ -974,6 +988,7 @@ namespace SWE_Projekt
         private Label lbProfit9;
         private Label lbProfit10;
         private Button btCalc;
+        private Button btExport;
         private Button btRenameRow1;
         private Button btRenameRow2;
         private Button btRenameRow3;
