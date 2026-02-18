@@ -22,11 +22,11 @@ namespace SWE_Projekt {
         public Form1()
         {
             InitializeComponent();
-            fillDictionaries();
+            FillDictionaries();
             btCalc_Click(this, new EventArgs());
         }
 
-        private void fillDictionaries()
+        private void FillDictionaries()
         {
             TotalLabels.Clear();
             ProfitLabels.Clear();
@@ -95,7 +95,7 @@ namespace SWE_Projekt {
             }
         }
 
-        private void btRename_Click(object sender, EventArgs e)
+        private void Click_btRename(object sender, EventArgs e)
         {
             // sender als Button casten
             Button? btn = sender as Button;
@@ -160,7 +160,7 @@ namespace SWE_Projekt {
         }
 
 
-        private void btExport_Click(object sender, EventArgs e)
+        private void Click_btExport(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "CSV Datei (*.csv)|*.csv";
@@ -211,7 +211,7 @@ namespace SWE_Projekt {
 
         private void btCalc_Click(object sender, EventArgs e)
         {
-            fillDictionaries();
+            FillDictionaries();
             double resPurch = 0;
             double resSale = 0;
             int resVolume = 0;
@@ -324,7 +324,7 @@ namespace SWE_Projekt {
             rowTbPoints.Add(12, rowPoints[12] + tbRowPadding);
             rowTbPoints.Add(13, rowPoints[13] + tbRowPadding);
 
-            redrawForm();
+            RedrawForm();
         }
     }
 }

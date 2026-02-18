@@ -484,7 +484,7 @@ namespace SWE_Projekt
             btRenameRow1.Name = "btRenameRow1";
             btRenameRow1.UseVisualStyleBackColor = true;
             btRenameRow1.Text = "Umbenennen";
-            btRenameRow1.Click += btRename_Click;
+            btRenameRow1.Click += Click_btRename;
             btRenameRow1.TabStop = false;
             // 
             // btRenameRow2
@@ -492,7 +492,7 @@ namespace SWE_Projekt
             btRenameRow2.Name = "btRenameRow2";
             btRenameRow2.UseVisualStyleBackColor = true;
             btRenameRow2.Text = "Umbenennen";
-            btRenameRow2.Click += btRename_Click;
+            btRenameRow2.Click += Click_btRename;
             btRenameRow2.TabStop = false;
             // 
             // btRenameRow3
@@ -500,7 +500,7 @@ namespace SWE_Projekt
             btRenameRow3.Name = "btRenameRow3";
             btRenameRow3.UseVisualStyleBackColor = true;
             btRenameRow3.Text = "Umbenennen";
-            btRenameRow3.Click += btRename_Click;
+            btRenameRow3.Click += Click_btRename;
             btRenameRow3.TabStop = false;
             // 
             // btRenameRow4
@@ -508,7 +508,7 @@ namespace SWE_Projekt
             btRenameRow4.Name = "btRenameRow4";
             btRenameRow4.Text = "Umbenennen";
             btRenameRow4.UseVisualStyleBackColor = true;
-            btRenameRow4.Click += btRename_Click;
+            btRenameRow4.Click += Click_btRename;
             btRenameRow4.TabStop = false;
             // 
             // btRenameRow5
@@ -516,7 +516,7 @@ namespace SWE_Projekt
             btRenameRow5.Name = "btRenameRow5";
             btRenameRow5.Text = "Umbenennen";
             btRenameRow5.UseVisualStyleBackColor = true;
-            btRenameRow5.Click += btRename_Click;
+            btRenameRow5.Click += Click_btRename;
             btRenameRow5.TabStop = false;
             // 
             // btRenameRow6
@@ -524,7 +524,7 @@ namespace SWE_Projekt
             btRenameRow6.Name = "btRenameRow6";
             btRenameRow6.Text = "Umbenennen";
             btRenameRow6.UseVisualStyleBackColor = true;
-            btRenameRow6.Click += btRename_Click;
+            btRenameRow6.Click += Click_btRename;
             btRenameRow6.TabStop = false;
             // 
             // btRenameRow7
@@ -532,7 +532,7 @@ namespace SWE_Projekt
             btRenameRow7.Name = "btRenameRow7";
             btRenameRow7.Text = "Umbenennen";
             btRenameRow7.UseVisualStyleBackColor = true;
-            btRenameRow7.Click += btRename_Click;
+            btRenameRow7.Click += Click_btRename;
             btRenameRow7.TabStop = false;
             // 
             // btRenameRow8
@@ -540,7 +540,7 @@ namespace SWE_Projekt
             btRenameRow8.Name = "btRenameRow8";
             btRenameRow8.Text = "Umbenennen";
             btRenameRow8.UseVisualStyleBackColor = true;
-            btRenameRow8.Click += btRename_Click;
+            btRenameRow8.Click += Click_btRename;
             btRenameRow8.TabStop = false;
             // 
             // btRenameRow9
@@ -548,7 +548,7 @@ namespace SWE_Projekt
             btRenameRow9.Name = "btRenameRow9";
             btRenameRow9.Text = "Umbenennen";
             btRenameRow9.UseVisualStyleBackColor = true;
-            btRenameRow9.Click += btRename_Click;
+            btRenameRow9.Click += Click_btRename;
             btRenameRow9.TabStop = false;
             // 
             // btRenameRow10
@@ -556,7 +556,7 @@ namespace SWE_Projekt
             btRenameRow10.Name = "btRenameRow10";
             btRenameRow10.Text = "Umbenennen";
             btRenameRow10.UseVisualStyleBackColor = true;
-            btRenameRow10.Click += btRename_Click;
+            btRenameRow10.Click += Click_btRename;
             btRenameRow10.TabStop = false;
             // 
             // lbTotalDesc
@@ -595,7 +595,7 @@ namespace SWE_Projekt
             btExport.Name = "btExport";
             btExport.Text = "Export...";
             btExport.UseVisualStyleBackColor = false;
-            btExport.Click += btExport_Click;
+            btExport.Click += Click_btExport;
             btExport.TabStop = false;
             // 
             // btCalc
@@ -707,8 +707,9 @@ namespace SWE_Projekt
          * Redraws the Form, to ensure the right Design is used, whenever the Form is Resized. 
          * Thus, the initial Design will be used at all Sizes.
          */
-        private void redrawForm()
+        private void RedrawForm()
         {
+            Debug.WriteLine(colWidth + " " + colPoints[1] + " " + colPoints[2] + " " + colPoints[3] + " " + colPoints[4] + " " + colPoints[5] + " " + colPoints[6]);
             lbModelDesc.Location = new Point(colPoints[1], rowPoints[1]);
             lbModelDesc.Size = new Size(colWidth, rowHeight);
 
@@ -890,40 +891,40 @@ namespace SWE_Projekt
             lbTotalProfit.Size = new Size(colWidth, rowHeight);
 
             btRenameRow1.Location = new Point(colTbPoints[6] - 10, rowTbPoints[2]);
-            btRenameRow1.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow1.Size = new Size((int)(colWidth*0.7), TEXTBOX_HEIGHT);
 
             btRenameRow2.Location = new Point(colTbPoints[6] - 10, rowTbPoints[3]);
-            btRenameRow2.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow2.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow3.Location = new Point(colTbPoints[6] - 10, rowTbPoints[4]);
-            btRenameRow3.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow3.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow4.Location = new Point(colTbPoints[6] - 10, rowTbPoints[5]);
-            btRenameRow4.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow4.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow5.Location = new Point(colTbPoints[6] - 10, rowTbPoints[6]);
-            btRenameRow5.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow5.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow6.Location = new Point(colTbPoints[6] - 10, rowTbPoints[7]);
-            btRenameRow6.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow6.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow7.Location = new Point(colTbPoints[6] - 10, rowTbPoints[8]);
-            btRenameRow7.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow7.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow8.Location = new Point(colTbPoints[6] - 10, rowTbPoints[9]);
-            btRenameRow8.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow8.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow9.Location = new Point(colTbPoints[6] - 10, rowTbPoints[10]);
-            btRenameRow9.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow9.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btRenameRow10.Location = new Point(colTbPoints[6] - 10, rowTbPoints[11]);
-            btRenameRow10.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btRenameRow10.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btExport.Location = new Point(colTbPoints[6] - 10, rowTbPoints[12]);
-            btExport.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btExport.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
             btCalc.Location = new Point(colTbPoints[6] - 10, rowTbPoints[13]);
-            btCalc.Size = new Size(TEXTBOX_WIDTH + 20, TEXTBOX_HEIGHT);
+            btCalc.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
         }
 
         #endregion
