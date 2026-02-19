@@ -1,8 +1,5 @@
 using System.Diagnostics;
 using System.Globalization;
-using System.Reflection;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -10,6 +7,10 @@ namespace SWE_Projekt {
 
     public partial class Form1 : Form
     {
+        /**
+         * All Dictionaries, that are needed to ensure functionality. These store all Components 
+         * that can be altered by either the User (TextBoxes) or the Application (Labels)
+         */
         private Dictionary<int, TextBox> SalePriceTextBoxes = new Dictionary<int, TextBox>();
         private Dictionary<int, TextBox> PurchasePriceTextBoxes = new Dictionary<int, TextBox>();
         private Dictionary<int, TextBox> VolumeTextBoxes = new Dictionary<int, TextBox>();
@@ -17,13 +18,19 @@ namespace SWE_Projekt {
         private Dictionary<int, Label> TotalLabels = new Dictionary<int, Label>();
         private Dictionary<int, Label> ModelLabels = new Dictionary<int, Label>();
 
-
+        /**
+         * The Limit of Rows in this Application.
+         */
         private int LIMIT = 10;
+
+        /**
+         * Constructor for the Form. Initializes all Components and simulates a Calc-Click to 
+         * display correct Values in all Labels
+         */
         public Form1()
         {
             InitializeComponent();
-            FillDictionaries();
-            btCalc_Click(this, new EventArgs());
+            Click_btCalc(this, new EventArgs());
         }
 
         private void FillDictionaries()
@@ -209,7 +216,7 @@ namespace SWE_Projekt {
             }
         }
 
-        private void btCalc_Click(object sender, EventArgs e)
+        private void Click_btCalc(object sender, EventArgs e)
         {
             FillDictionaries();
             double resPurch = 0;
@@ -219,15 +226,14 @@ namespace SWE_Projekt {
             {
                 
                 String sale = Regex.Replace(SalePriceTextBoxes[i].Text, @"[^0-9\.,]", "");
-
-                if (!TryParseFlexibleDecimal(SalePriceTextBoxes[i].Text, out decimal valueSale))
+                if (!TryParseFlexibleDecimal(sale, out decimal valueSale))
                 {
                     valueSale = 0;
                 }
                 SalePriceTextBoxes[i].Text = "" + valueSale;
 
                 String purchase = Regex.Replace(PurchasePriceTextBoxes[i].Text, @"[^0-9\.,]", "");
-                if (!TryParseFlexibleDecimal(PurchasePriceTextBoxes[i].Text, out decimal valuePurch))
+                if (!TryParseFlexibleDecimal(purchase, out decimal valuePurch))
                 {
                     valuePurch = 0;
                 }
@@ -267,16 +273,27 @@ namespace SWE_Projekt {
             }
         }
 
+        /**
+         * A Function, that gets called, whenever the Form is resized. It will calculate the provided Space 
+         * for each Row and Column in our Pseudo-Table Layout. Thus, each Cell gets assigned a new Size and 
+         * all Components can be displayed in a given Way.
+         */
         private void Form1_Resize(object sender, EventArgs e)
         {
+            //Saves the Width and Height of the usable Area for easier Access.
             int newWidth = this.ClientSize.Width;
             int newHeight = this.ClientSize.Height;
 
+            //Clears all Point-Dictionaries, so they can store new Values for each Key.
             colPoints.Clear();
             rowPoints.Clear();
             colTbPoints.Clear();
             rowTbPoints.Clear();
 
+            /**
+             * Calulates the new Width of each column and uses this Width to calculate
+             * the leftmost Point of all columns.
+             */
             colWidth = (newWidth - 10) / 6;
             colPoints.Add(1, 5);
             colPoints.Add(2, colPoints[1] + colWidth);
@@ -285,6 +302,10 @@ namespace SWE_Projekt {
             colPoints.Add(5, colPoints[4] + colWidth);
             colPoints.Add(6, colPoints[5] + colWidth);
 
+            /**
+             * Calulates the new Height of each row and uses this Height to calculate
+             * the topmost Point of all rows.
+             */
             rowHeight = (newHeight - 20) / 13;
             rowPoints.Add(1, 10);
             rowPoints.Add(2, rowPoints[1] + rowHeight);
@@ -300,9 +321,17 @@ namespace SWE_Projekt {
             rowPoints.Add(12, rowPoints[11] + rowHeight);
             rowPoints.Add(13, rowPoints[12] + rowHeight);
 
+            /**
+             * Calculates the needed Padding for all Textboxes, since these have a fixed Size.
+             * This is used, to display these Boxes in the Center of each Cell.
+             */
             int tbColPadding = (colWidth - TEXTBOX_WIDTH) / 2;
             int tbRowPadding = (rowHeight - TEXTBOX_HEIGHT) / 2;
 
+            /**
+             * Sets all TextBox Points to the newly calculated values including the Padding 
+             * calculated above.
+             */
             colTbPoints.Add(1, colPoints[1] + tbColPadding);
             colTbPoints.Add(2, colPoints[2] + tbColPadding);
             colTbPoints.Add(3, colPoints[3] + tbColPadding);
@@ -324,6 +353,10 @@ namespace SWE_Projekt {
             rowTbPoints.Add(12, rowPoints[12] + tbRowPadding);
             rowTbPoints.Add(13, rowPoints[13] + tbRowPadding);
 
+            /** 
+             * Calls the Redraw-Function in the Designer, to place all Components at their 
+             * new Location in the Form
+             */
             RedrawForm();
         }
     }

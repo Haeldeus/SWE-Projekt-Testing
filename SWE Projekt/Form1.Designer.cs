@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing.Text;
+using System.Security.Policy;
 
 namespace SWE_Projekt
 {
@@ -561,30 +563,35 @@ namespace SWE_Projekt
             // 
             // lbTotalDesc
             // 
+            lbTotalDesc.Font = new Font("Segoe UI", 12F);
             lbTotalDesc.Name = "lbTotalDesc";
             lbTotalDesc.Text = "Gesamtposten";
             lbTotalDesc.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbTotalPurchPrice
             // 
+            lbTotalPurchPrice.Font = new Font("Segoe UI", 12F);
             lbTotalPurchPrice.Name = "lbTotalPurchPrice";
             lbTotalPurchPrice.Text = "0€";
             lbTotalPurchPrice.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbTotalSalePrice
             // 
+            lbTotalSalePrice.Font = new Font("Segoe UI", 12F);
             lbTotalSalePrice.Name = "lbTotalSalePrice";
             lbTotalSalePrice.Text = "0€";
             lbTotalSalePrice.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbTotalVolume
             // 
+            lbTotalVolume.Font = new Font("Segoe UI", 12F);
             lbTotalVolume.Name = "lbTotalVolume";
             lbTotalVolume.Text = "0";
             lbTotalVolume.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbTotalProfit
             // 
+            lbTotalProfit.Font = new Font("Segoe UI", 13F);
             lbTotalProfit.Name = "lbTotalProfit";
             lbTotalProfit.Text = "0€";
             lbTotalProfit.TextAlign = ContentAlignment.MiddleCenter;
@@ -604,7 +611,7 @@ namespace SWE_Projekt
             btCalc.Name = "btCalc";
             btCalc.Text = "Berechnen";
             btCalc.UseVisualStyleBackColor = false;
-            btCalc.Click += btCalc_Click;
+            btCalc.Click += Click_btCalc;
             btCalc.TabStop = false;
             AcceptButton = btCalc;
 
@@ -702,14 +709,17 @@ namespace SWE_Projekt
             PerformLayout();
         }
 
-
-        /**
-         * Redraws the Form, to ensure the right Design is used, whenever the Form is Resized. 
-         * Thus, the initial Design will be used at all Sizes.
-         */
+        /// <summary>
+        ///  Redraws the Form, to ensure the right Design is used, whenever the Form is Resized. 
+        ///  Thus, the initial Design will be used at all Sizes.To minimize Comment-Overflow,
+        ///  only the first Variant of all Components will be described.All other Components 
+        ///  are virtually the same, only at another Position.
+        /// </summary>
         private void RedrawForm()
         {
-            Debug.WriteLine(colWidth + " " + colPoints[1] + " " + colPoints[2] + " " + colPoints[3] + " " + colPoints[4] + " " + colPoints[5] + " " + colPoints[6]);
+            /**
+             * Places the Model-Labels in the First Column, with it's Description Label in the First Row
+             */
             lbModelDesc.Location = new Point(colPoints[1], rowPoints[1]);
             lbModelDesc.Size = new Size(colWidth, rowHeight);
 
@@ -743,9 +753,15 @@ namespace SWE_Projekt
             lbModel10.Location = new Point(colPoints[1], rowPoints[11]);
             lbModel10.Size = new Size(colWidth, rowHeight);
 
+            /**
+             * Places the Total-Label at the Bottom of the Column.
+             */
             lbTotalDesc.Location = new Point(colPoints[1], rowPoints[13]);
             lbTotalDesc.Size = new Size(colWidth, rowHeight);
 
+            /**
+             * Places the Model-Labels in the First Column, with it's Description Label in the First Row
+             */
             lbPPDesc.Location = new Point(colPoints[2], rowPoints[1]);
             lbPPDesc.Size = new Size(colWidth, rowHeight);
 
@@ -890,40 +906,40 @@ namespace SWE_Projekt
             lbTotalProfit.Location = new Point(colPoints[5], rowPoints[13]);
             lbTotalProfit.Size = new Size(colWidth, rowHeight);
 
-            btRenameRow1.Location = new Point(colTbPoints[6] - 10, rowTbPoints[2]);
+            btRenameRow1.Location = new Point(colPoints[6] - 10, rowTbPoints[2]);
             btRenameRow1.Size = new Size((int)(colWidth*0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow2.Location = new Point(colTbPoints[6] - 10, rowTbPoints[3]);
+            btRenameRow2.Location = new Point(colPoints[6] - 10, rowTbPoints[3]);
             btRenameRow2.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow3.Location = new Point(colTbPoints[6] - 10, rowTbPoints[4]);
+            btRenameRow3.Location = new Point(colPoints[6] - 10, rowTbPoints[4]);
             btRenameRow3.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow4.Location = new Point(colTbPoints[6] - 10, rowTbPoints[5]);
+            btRenameRow4.Location = new Point(colPoints[6] - 10, rowTbPoints[5]);
             btRenameRow4.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow5.Location = new Point(colTbPoints[6] - 10, rowTbPoints[6]);
+            btRenameRow5.Location = new Point(colPoints[6] - 10, rowTbPoints[6]);
             btRenameRow5.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow6.Location = new Point(colTbPoints[6] - 10, rowTbPoints[7]);
+            btRenameRow6.Location = new Point(colPoints[6] - 10, rowTbPoints[7]);
             btRenameRow6.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow7.Location = new Point(colTbPoints[6] - 10, rowTbPoints[8]);
+            btRenameRow7.Location = new Point(colPoints[6] - 10, rowTbPoints[8]);
             btRenameRow7.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow8.Location = new Point(colTbPoints[6] - 10, rowTbPoints[9]);
+            btRenameRow8.Location = new Point(colPoints[6] - 10, rowTbPoints[9]);
             btRenameRow8.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow9.Location = new Point(colTbPoints[6] - 10, rowTbPoints[10]);
+            btRenameRow9.Location = new Point(colPoints[6] - 10, rowTbPoints[10]);
             btRenameRow9.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btRenameRow10.Location = new Point(colTbPoints[6] - 10, rowTbPoints[11]);
+            btRenameRow10.Location = new Point(colPoints[6] - 10, rowTbPoints[11]);
             btRenameRow10.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btExport.Location = new Point(colTbPoints[6] - 10, rowTbPoints[12]);
+            btExport.Location = new Point(colPoints[6] - 10, rowTbPoints[12]);
             btExport.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
 
-            btCalc.Location = new Point(colTbPoints[6] - 10, rowTbPoints[13]);
+            btCalc.Location = new Point(colPoints[6] - 10, rowTbPoints[13]);
             btCalc.Size = new Size((int)(colWidth * 0.7), TEXTBOX_HEIGHT);
         }
 
