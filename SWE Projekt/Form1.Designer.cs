@@ -484,6 +484,7 @@ namespace SWE_Projekt
             // btRenameRow1
             // 
             btRenameRow1.Name = "btRenameRow1";
+            btRenameRow1.Font = new Font("Segoe UI", 9);
             btRenameRow1.UseVisualStyleBackColor = true;
             btRenameRow1.Text = "Umbenennen";
             btRenameRow1.Click += Click_btRename;
@@ -492,6 +493,7 @@ namespace SWE_Projekt
             // btRenameRow2
             // 
             btRenameRow2.Name = "btRenameRow2";
+            btRenameRow2.Font = new Font("Segoe UI", 9);
             btRenameRow2.UseVisualStyleBackColor = true;
             btRenameRow2.Text = "Umbenennen";
             btRenameRow2.Click += Click_btRename;
@@ -500,6 +502,7 @@ namespace SWE_Projekt
             // btRenameRow3
             // 
             btRenameRow3.Name = "btRenameRow3";
+            btRenameRow3.Font = new Font("Segoe UI", 9);
             btRenameRow3.UseVisualStyleBackColor = true;
             btRenameRow3.Text = "Umbenennen";
             btRenameRow3.Click += Click_btRename;
@@ -509,6 +512,7 @@ namespace SWE_Projekt
             // 
             btRenameRow4.Name = "btRenameRow4";
             btRenameRow4.Text = "Umbenennen";
+            btRenameRow4.Font = new Font("Segoe UI", 9);
             btRenameRow4.UseVisualStyleBackColor = true;
             btRenameRow4.Click += Click_btRename;
             btRenameRow4.TabStop = false;
@@ -517,6 +521,7 @@ namespace SWE_Projekt
             // 
             btRenameRow5.Name = "btRenameRow5";
             btRenameRow5.Text = "Umbenennen";
+            btRenameRow5.Font = new Font("Segoe UI", 9);
             btRenameRow5.UseVisualStyleBackColor = true;
             btRenameRow5.Click += Click_btRename;
             btRenameRow5.TabStop = false;
@@ -525,6 +530,7 @@ namespace SWE_Projekt
             // 
             btRenameRow6.Name = "btRenameRow6";
             btRenameRow6.Text = "Umbenennen";
+            btRenameRow6.Font = new Font("Segoe UI", 9);
             btRenameRow6.UseVisualStyleBackColor = true;
             btRenameRow6.Click += Click_btRename;
             btRenameRow6.TabStop = false;
@@ -533,6 +539,7 @@ namespace SWE_Projekt
             // 
             btRenameRow7.Name = "btRenameRow7";
             btRenameRow7.Text = "Umbenennen";
+            btRenameRow7.Font = new Font("Segoe UI", 9);
             btRenameRow7.UseVisualStyleBackColor = true;
             btRenameRow7.Click += Click_btRename;
             btRenameRow7.TabStop = false;
@@ -541,6 +548,7 @@ namespace SWE_Projekt
             // 
             btRenameRow8.Name = "btRenameRow8";
             btRenameRow8.Text = "Umbenennen";
+            btRenameRow8.Font = new Font("Segoe UI", 9);
             btRenameRow8.UseVisualStyleBackColor = true;
             btRenameRow8.Click += Click_btRename;
             btRenameRow8.TabStop = false;
@@ -549,6 +557,7 @@ namespace SWE_Projekt
             // 
             btRenameRow9.Name = "btRenameRow9";
             btRenameRow9.Text = "Umbenennen";
+            btRenameRow9.Font = new Font("Segoe UI", 9);
             btRenameRow9.UseVisualStyleBackColor = true;
             btRenameRow9.Click += Click_btRename;
             btRenameRow9.TabStop = false;
@@ -557,6 +566,7 @@ namespace SWE_Projekt
             // 
             btRenameRow10.Name = "btRenameRow10";
             btRenameRow10.Text = "Umbenennen";
+            btRenameRow10.Font = new Font("Segoe UI", 9);
             btRenameRow10.UseVisualStyleBackColor = true;
             btRenameRow10.Click += Click_btRename;
             btRenameRow10.TabStop = false;
