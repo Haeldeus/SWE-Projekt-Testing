@@ -629,7 +629,7 @@ namespace SWE_Projekt
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(925, 600);
 
