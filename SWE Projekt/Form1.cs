@@ -7,6 +7,10 @@ namespace SWE_Projekt {
 
     /// <summary>
     /// The Partial Class for the Form, which provides all Methods for this Form and all EventHandler.
+    /// Calculations are done with the Methods in this Class.
+    /// 
+    /// Autor: F.Pearson, I.Jost, A.Mocan
+    /// Version 1.0
     /// </summary>
     public partial class Form1 : Form
     {
@@ -347,7 +351,9 @@ namespace SWE_Projekt {
         /// </param>
         private void setRowActive(int rowIndex, bool active)
         {
+            //Sets the Value in the Dictionary, so other Methods can access this Value easily.
             rowActive[rowIndex] = active;
+            //If the Row is set active, all Components are set to their default States.
             if (active)
             {
                 SalePriceTextBoxes[rowIndex].BackColor = Color.White;
@@ -358,6 +364,7 @@ namespace SWE_Projekt {
                 ModelLabels[rowIndex].ForeColor = Color.Black;
             } else
             {
+                //Uses Gray Font and BackgroundColor to signal the User, that these Rows are inactive.
                 SalePriceTextBoxes[rowIndex].BackColor = Color.DarkGray;
                 SalePriceTextBoxes[rowIndex].BorderStyle = BorderStyle.Fixed3D;
                 PurchasePriceTextBoxes[rowIndex].BackColor = Color.DarkGray;

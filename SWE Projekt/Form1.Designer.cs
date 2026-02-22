@@ -5,6 +5,14 @@ using System.Security.Policy;
 
 namespace SWE_Projekt
 {
+    /// <summary>
+    /// The Designer partial Class of Form1, where the designing of the Form is done.
+    /// Except Sizing-Calculations, there are no Calculations done in this partial Class, 
+    /// but all Components are set to their Positions via Methods provided by this Class.
+    /// 
+    /// Autor: F.Pearson, I.Jost, A.Mocan
+    /// Version 1.0
+    /// </summary>
     partial class Form1
     {
         /// <summary>
@@ -12,14 +20,18 @@ namespace SWE_Projekt
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        //Dictionaries of all Points for all Columns and Rows, and the TextBox Variant of these,
+        //since the Boxes have to be placed differently than the other Components.
         private Dictionary<int, int> rowPoints = new Dictionary<int, int>();
         private Dictionary<int, int> rowTbPoints = new Dictionary<int, int>();
         private Dictionary<int, int> colPoints = new Dictionary<int, int>();
         private Dictionary<int, int> colTbPoints = new Dictionary<int, int>();
 
+        //The Width and Height of all Rows and Columns.
         private int colWidth = 142;
         private int rowHeight = 45;
 
+        //Fixed Values for the TextBox Sizes, and the MinSize of the Client.
         private readonly int TEXTBOX_WIDTH = 75;
         private readonly int TEXTBOX_HEIGHT = 23;
 
